@@ -79,14 +79,19 @@ class App extends Component {
     const visibleContacts = this.getVisibleContacts();
     return (
       <>
-        <div className={styles.container}>
+        <div className={(styles.container, styles.border)}>
           <h1>Phonebook</h1>
           <Form onSubmit={this.formSubmitHandler} />
         </div>
         <div className={styles.container}>
           <h1>Contacts</h1>
-          <Filter value={filter} onChange={this.changeFilter} />
+          <Filter
+            className={css.filter}
+            value={filter}
+            onChange={this.changeFilter}
+          />
           <ContactsList
+            className={styles.contactList}
             onDelete={this.handleDelete}
             contacts={visibleContacts}
           />

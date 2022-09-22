@@ -3,7 +3,13 @@ import css from './filter.module.css';
 const Filter = ({ value, onChange }) => {
   return (
     <div className={css.filter}>
-      <input type="text" value={value} name="filter" onChange={onChange} />
+      <input
+        placeholder="type name for search"
+        type="text"
+        value={value}
+        name="filter"
+        onChange={onChange}
+      />
     </div>
   );
 };

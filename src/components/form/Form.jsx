@@ -22,22 +22,25 @@ class Form extends Component {
       number: '',
     });
   };
-
+  nameId = nanoid();
+  phoneId = nanoid();
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="">
-        <label>
-          Name
+      <form onSubmit={this.handleSubmit} className={css.form}>
+        <div className={css.formContainer}>
+          <label htmlFor={this.nameId}>Name</label>
           <input
+            id={this.nameId}
             type="text"
             value={this.state.name}
             name="name"
             onChange={this.handleChange}
           />
-        </label>
-        <label>
-          Phone
+        </div>
+        <div className={css.formContainer}>
+          <label htmlFor={this.phoneId}>Phone</label>
           <input
+            id={this.phoneId}
             onChange={this.handleChange}
             value={this.state.number}
             type="tel"
@@ -46,7 +49,7 @@ class Form extends Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
           />
-        </label>
+        </div>
         <button type="submit">Add contact</button>
       </form>
     );

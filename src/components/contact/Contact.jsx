@@ -1,7 +1,9 @@
+import css from './contact.module.css';
 const Contact = ({ data, onDelete }) => {
   return (
     <li>
-      {data.name}:{data.number}
+      <span className={css.name}>{data.name}:</span>
+      <span className={css.number}>{data.number}</span>
       <button
         id={data.id}
         onClick={e => onDelete(data.id)}
