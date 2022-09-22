@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './contact.module.css';
 const Contact = ({ data, onDelete }) => {
   return (
@@ -15,5 +16,10 @@ const Contact = ({ data, onDelete }) => {
     </li>
   );
 };
-
+Contact.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string,
+    phone: PropTypes.string,
+  }),
+};
 export default Contact;

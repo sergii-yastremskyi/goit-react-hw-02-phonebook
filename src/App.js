@@ -40,7 +40,7 @@ class App extends Component {
         id: nanoid(),
         ...data,
       };
-      console.log('data', data);
+
       return {
         contacts: [...prev.contacts, newContact],
       };
@@ -54,7 +54,6 @@ class App extends Component {
 
   changeFilter = evt => {
     this.setState({ filter: evt.currentTarget.value });
-    console.log('filter', this.state.filter);
   };
   getVisibleContacts = () => {
     const { filter, contacts } = this.state;
